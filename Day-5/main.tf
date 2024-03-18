@@ -89,7 +89,7 @@ resource "aws_instance" "server" {
   # File provisioner to copy a file from local to the remote EC2 instance
   provisioner "file" {
     source      = "app.py"  # Replace with the path to your local file
-    destination = "/root/terraform-zero-to-hero/Day-5"  # Replace with the path on the remote instance
+    destination = "/home/ubuntu/app.py"  # Replace with the path on the remote instance
   }
 
   provisioner "remote-exec" {

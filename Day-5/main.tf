@@ -97,7 +97,7 @@ resource "aws_instance" "server" {
       "echo 'Hello from the remote instance'",
       "sudo yum install epel -y",  # Update package lists (for ubuntu)
       "sudo yum install -y python3-pip",  # Example package installation
-      "cd /home/ubuntu",
+      "cd /home",
       "sudo pip3 install flask",
       "sudo python3 app.py &",
     ]

@@ -89,13 +89,13 @@ resource "aws_instance" "server" {
   # File provisioner to copy a file from local to the remote EC2 instance
   provisioner "file" {
     source      = "app.py"  # Replace with the path to your local file
-    destination = "/home/ubuntu/app.py"  # Replace with the path on the remote instance
+    destination = "/home/app.py"  # Replace with the path on the remote instance
   }
 
   provisioner "remote-exec" {
     inline = [
       "echo 'Hello from the remote instance'",
-      "sudo yum install epel -y",  # Update package lists (for ubuntu)
+      "sudo amazon-linux-extras install epel -y",  # Update package lists (for amazon-linux)
       "sudo yum install -y python3-pip",  # Example package installation
       "cd /home",
       "sudo pip3 install flask",
